@@ -2,7 +2,7 @@ import { useState } from "react";
 import gymStore from "../gymStore";
 const ClassesCreate = () => {
   const [data, setData] = useState({
-    className: "00",
+    className: "",
     duration: "",
     timing: "",
   });
