@@ -29,7 +29,7 @@ const ClientCreate = () => {
         <input onChange={handleChange} type="text" name="clientN" />
 
         <label>Client Age:</label>
-        <input min="1" onChange={handleChange} type="number" name="age" />
+        <input min="16" onChange={handleChange} type="number" name="age" />
 
         <label>Client weight:</label>
         <input min="1" onChange={handleChange} type="number" name="weight" />
