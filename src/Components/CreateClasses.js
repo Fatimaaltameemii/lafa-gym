@@ -18,7 +18,7 @@ const ClassesCreate = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    gymStore.adding(data);
+    gymStore.addClass(data);
   };
 
   return (

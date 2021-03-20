@@ -1,4 +1,4 @@
-const ourGymData = [
+const instructorInfo = [
   {
     id: 1,
     instructor: "Farah",
@@ -24,4 +24,4 @@ const ourGymData = [
     duration: "1 hour",
   },
 ];
-export default ourGymData;
+export default instructorInfo;

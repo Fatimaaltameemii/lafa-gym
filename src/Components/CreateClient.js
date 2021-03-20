@@ -19,7 +19,7 @@ const ClientCreate = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    gymStore.adding(data);
+    gymStore.addClient(data);
   };
 
   return (
