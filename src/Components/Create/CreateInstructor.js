@@ -1,5 +1,6 @@
 import { useState } from "react";
-import gymStore from "../gymStore";
+import gymStore from "../../gymStore";
+
 const InstrucCreate = () => {
   const [data, setData] = useState({
     instructor: "",
@@ -9,16 +10,14 @@ const InstrucCreate = () => {
   const handleChange = (event) => {
     setData((prevState) => ({
       ...prevState,
-      [event.target.instructor]:
-        event.target.instructor === "classType"
-          ? +event.target.value
-          : event.target.value,
+      [event.target.name]: event.target.value,
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     gymStore.addInst(data);
+    console.log(data);
   };
 
   return (

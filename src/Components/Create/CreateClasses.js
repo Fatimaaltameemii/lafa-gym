@@ -1,5 +1,5 @@
 import { useState } from "react";
-import gymStore from "../gymStore";
+import gymStore from "../../gymStore";
 const ClassesCreate = () => {
   const [data, setData] = useState({
     className: "",
@@ -9,16 +9,14 @@ const ClassesCreate = () => {
   const handleChange = (event) => {
     setData((prevState) => ({
       ...prevState,
-      [event.target.className]:
-        event.target.className === "duration"
-          ? +event.target.value
-          : event.target.value,
+      [event.target.name]: event.target.value,
     }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     gymStore.addClass(data);
+    console.log(data);
   };
 
   return (

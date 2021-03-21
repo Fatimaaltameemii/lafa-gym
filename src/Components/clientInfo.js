@@ -3,8 +3,8 @@ const clientInfo = [
     id: 1,
     clientN: "Layan",
     age: 18,
-    weight: 75,
-    height: 167,
+    weight: 60,
+    height: 155,
   },
 ];
 export default clientInfo;

@@ -1,8 +1,13 @@
 import Navbar from "./Components/Navbar";
-import InstrucCreate from "./Components/CreateInstructor";
 import { observer } from "mobx-react";
-import ClientCreate from "./Components/CreateClient";
-import ClassesCreate from "./Components/CreateClasses";
+//Create
+import InstrucCreate from "./Components/Create/CreateInstructor";
+import ClientCreate from "./Components/Create/CreateClient";
+import ClassesCreate from "./Components/Create/CreateClasses";
+//List
+import InstList from "./Components/List/InstList";
+import ClassList from "./Components/List/ClassList";
+import ClientList from "./Components/List/ClientList";
 
 function App() {
   return (
@@ -10,12 +15,15 @@ function App() {
       <Navbar />
       <div>
         <InstrucCreate />
+        <InstList />
       </div>
       <div>
         <ClassesCreate />
+        <ClassList />
       </div>
       <div>
         <ClientCreate />
+        <ClientList />
       </div>
     </div>
   );

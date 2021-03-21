@@ -1,17 +1,19 @@
 import { useState } from "react";
-import gymStore from "../gymStore";
+import gymStore from "../../gymStore";
 const ClientCreate = () => {
   const [data, setData] = useState({
     clientN: "",
-    age: 0,
-    weight: 0,
-    height: 0,
+    age: null,
+    weight: null,
+    height: null,
   });
   const handleChange = (event) => {
     setData((prevState) => ({
       ...prevState,
-      [event.target.clientN]:
-        event.target.clientN === "age"
+      [event.target.name]:
+        event.target.name === "age" ||
+        event.target.name === "weight" ||
+        event.target.name === "height"
           ? +event.target.value
           : event.target.value,
     }));
@@ -20,6 +22,7 @@ const ClientCreate = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     gymStore.addClient(data);
+    console.log(data);
   };
 
   return (
