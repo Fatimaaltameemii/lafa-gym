@@ -15,17 +15,32 @@ function App() {
       <div>
         <Navbar />
       </div>
+
       <div>
-        <InstrucCreate />
-        <InstList />
+        <div>
+          <InstrucCreate />
+        </div>
+        <div>
+          <InstList />
+        </div>
       </div>
+
       <div>
-        <ClassesCreate />
-        <ClassList />
+        <div>
+          <ClassesCreate />
+        </div>
+        <div>
+          <ClassList />
+        </div>
       </div>
+
       <div>
-        <ClientCreate />
-        <ClientList />
+        <div>
+          <ClientCreate />
+        </div>
+        <div>
+          <ClientList />
+        </div>
       </div>
     </div>
   );
