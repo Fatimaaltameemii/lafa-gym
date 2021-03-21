@@ -12,7 +12,9 @@ import ClientList from "./Components/List/ClientList";
 function App() {
   return (
     <div>
-      <Navbar />
+      <div>
+        <Navbar />
+      </div>
       <div>
         <InstrucCreate />
         <InstList />
