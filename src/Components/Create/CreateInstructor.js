@@ -1,6 +1,8 @@
 import { useState } from "react";
 import gymStore from "../../gymStore";
-
+import { CustomTable } from "../styles";
+import { TableContent } from "../styles";
+import { ThemeButton } from "../styles";
 const InstrucCreate = () => {
   const [data, setData] = useState({
     instructor: "",
@@ -22,18 +24,27 @@ const InstrucCreate = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>Add instructor name:</label>
-        <input onChange={handleChange} type="text" name="instructor" />
+      <CustomTable>
+        <form onSubmit={handleSubmit}>
+          <TableContent>
+            <p>Add instructor: </p>
+            <label> instructor name: </label>
+            <input onChange={handleChange} type="text" name="instructor" />
+          </TableContent>
 
-        <label>Type of the class:</label>
-        <input onChange={handleChange} type="text" name="classType" />
+          <TableContent>
+            <label>Type of the class: </label>
+            <input onChange={handleChange} type="text" name="classType" />
+          </TableContent>
 
-        <label>Duration:</label>
-        <input onChange={handleChange} type="text" name="duration" />
-
-        <button type="submit">Submit</button>
-      </form>
+          <TableContent>
+            {" "}
+            <label>Duration: </label>
+            <input onChange={handleChange} type="text" name="duration" />
+          </TableContent>
+          <ThemeButton type="submit">Submit</ThemeButton>
+        </form>
+      </CustomTable>
     </div>
   );
 };

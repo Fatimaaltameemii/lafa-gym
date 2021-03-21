@@ -1,17 +1,18 @@
 import gymStore from "../../gymStore";
-
+import { InfoWrapper, ThemeRemoveButton } from "../styles";
 const ClassItem = (props) => {
   const clasInfo = props.clasInfo;
+
   return (
-    <div>
+    <InfoWrapper>
       <p>Class: {clasInfo.className}</p>
       <p>Duration: {clasInfo.duration}</p>
       <p>Time: {clasInfo.timing}</p>
-      <button onClick={() => gymStore.removeClass(clasInfo.id)}>
+      <ThemeRemoveButton onClick={() => gymStore.removeClass(clasInfo.id)}>
         {" "}
         Remove Class{" "}
-      </button>
-    </div>
+      </ThemeRemoveButton>
+    </InfoWrapper>
   );
 };
 export default ClassItem;

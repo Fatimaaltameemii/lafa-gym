@@ -1,5 +1,8 @@
 import { useState } from "react";
 import gymStore from "../../gymStore";
+import { CustomTable } from "../styles";
+import { TableContent } from "../styles";
+import { ThemeButton } from "../styles";
 const ClientCreate = () => {
   const [data, setData] = useState({
     clientN: "",
@@ -27,21 +30,41 @@ const ClientCreate = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>Add Client name:</label>
-        <input onChange={handleChange} type="text" name="clientN" />
+      <CustomTable>
+        <form onSubmit={handleSubmit}>
+          <TableContent>
+            <p>Add Client: </p>
+            <label>Client name:</label>
+            <input onChange={handleChange} type="text" name="clientN" />
+          </TableContent>
 
-        <label>Client Age:</label>
-        <input min="16" onChange={handleChange} type="number" name="age" />
+          <TableContent>
+            <label>Client Age:</label>
+            <input min="16" onChange={handleChange} type="number" name="age" />
+          </TableContent>
 
-        <label>Client weight:</label>
-        <input min="1" onChange={handleChange} type="number" name="weight" />
+          <TableContent>
+            <label>Client weight:</label>
+            <input
+              min="1"
+              onChange={handleChange}
+              type="number"
+              name="weight"
+            />
+          </TableContent>
 
-        <label>Client height:</label>
-        <input min="1" onChange={handleChange} type="number" name="height" />
-
-        <button type="submit">Submit</button>
-      </form>
+          <TableContent>
+            <label>Client height:</label>
+            <input
+              min="1"
+              onChange={handleChange}
+              type="number"
+              name="height"
+            />
+          </TableContent>
+          <ThemeButton type="submit">Submit</ThemeButton>
+        </form>
+      </CustomTable>
     </div>
   );
 };

@@ -1,18 +1,18 @@
 import gymStore from "../../gymStore";
-
+import { InfoWrapper, ThemeRemoveButton } from "../styles";
 const ClientItem = (props) => {
   const clyInfo = props.clyInfo;
   return (
-    <div>
+    <InfoWrapper>
       <p>Name: {clyInfo.clientN}</p>
       <p>Age: {clyInfo.age} years</p>
       <p>Weight: {clyInfo.weight} Kg</p>
       <p>Height: {clyInfo.height} cm</p>
-      <button onClick={() => gymStore.removeClient(clyInfo.id)}>
+      <ThemeRemoveButton onClick={() => gymStore.removeClient(clyInfo.id)}>
         {" "}
         Remove Client{" "}
-      </button>
-    </div>
+      </ThemeRemoveButton>
+    </InfoWrapper>
   );
 };
 export default ClientItem;
