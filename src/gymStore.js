@@ -30,19 +30,32 @@ class GymStore {
     console.log(this.classesInfo);
   };
 
-  //removing = (id) => {
-  // this.info = this.info.filter((cv) => cv.id !== id);
-  // };
+  removeInst = (instId) => {
+    this.instructorInfo = this.instructorInfo.filter(
+      (instr) => instr.id !== instId
+    );
+  };
+
+  removeClient = (clientId) => {
+    this.clientInfo = this.clientInfo.filter((cly) => cly.id !== clientId);
+  };
+  removeClass = (clasId) => {
+    this.classesInfo = this.classesInfo.filter((clas) => clas.id !== clasId);
+  };
 
   constructor() {
     makeObservable(this, {
       instructorInfo: observable,
       clientInfo: observable,
       classesInfo: observable,
-      //removeing: action,
+
       addInst: action,
       addClient: action,
       addClass: action,
+
+      removeInst: action,
+      removeClient: action,
+      removeClass: action,
     });
   }
 }
