@@ -6,5 +6,12 @@ const clientInfo = [
     weight: 60,
     height: 155,
   },
+  {
+    id: 2,
+    clientN: "Shiakh",
+    age: 25,
+    weight: 77,
+    height: 167,
+  },
 ];
 export default clientInfo;
