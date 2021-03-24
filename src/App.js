@@ -10,6 +10,11 @@ import ClassList from "./Components/List/ClassList";
 import ClientList from "./Components/List/ClientList";
 
 function App() {
+  // const fetchCookies = () => {
+  //   console.log("Let's fetch some cookies");
+  // };
+
+  // fetchCookies();
   return (
     <div>
       <div>

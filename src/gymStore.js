@@ -1,12 +1,37 @@
 import { action, makeObservable, observable } from "mobx";
-import instructorInfo from "./Components/instructorInfo";
-import clientInfo from "./Components/clientInfo";
-import classesInfo from "./Components/classesInfo";
+import axios from "axios";
 
 class GymStore {
-  instructorInfo = instructorInfo;
-  clientInfo = clientInfo;
-  classesInfo = classesInfo;
+  instructorInfo = [];
+  clientInfo = [];
+  classesInfo = [];
+
+  fetchInstructor = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/instructorReq");
+      this.instructorInfo = response.data;
+    } catch (error) {
+      console.error("fetchInstructor  -> response", error);
+    }
+  };
+
+  fetchClient = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/clientReq");
+      this.clientInfo = response.data;
+    } catch (error) {
+      console.error("fetchClient -> response", error);
+    }
+  };
+
+  fetchClass = async () => {
+    try {
+      const response = await axios.get("http://localhost:8000/classReq");
+      this.classesInfo = response.data;
+    } catch (error) {
+      console.error("fetchClass -> response", error);
+    }
+  };
 
   addInst = (data) => {
     let newinst = data;
@@ -49,6 +74,10 @@ class GymStore {
       clientInfo: observable,
       classesInfo: observable,
 
+      fetchInstructor: action,
+      fetchClient: action,
+      fetchClass: action,
+
       addInst: action,
       addClient: action,
       addClass: action,
@@ -61,5 +90,9 @@ class GymStore {
 }
 
 const gymStore = new GymStore();
+
+gymStore.fetchInstructor();
+gymStore.fetchClient();
+gymStore.fetchClass();
 
 export default gymStore;
